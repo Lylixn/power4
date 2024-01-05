@@ -3,6 +3,7 @@ import {BoardLine} from "../BoardLine";
 import {useState} from "react";
 import {checkIfLineIsFull} from "../../utils/checkIfLineIsFull";
 import {placeToken} from "../../utils/placeToken";
+import {checkWin} from "../../utils/checkWin";
 
 interface GameBoardProps {
   currentPlayer: number;
@@ -22,6 +23,11 @@ export function GameBoard(GameBoardProps: GameBoardProps) {
     let tempBoard = [...board];
     tempBoard[lineIndex] = line;
     setBoard(tempBoard);
+
+    if (checkWin(board)){
+      alert(`Player ${GameBoardProps.currentPlayer} won!`);
+      return 0;
+    }
 
     GameBoardProps.setCurrentPlayer(GameBoardProps.currentPlayer === 1 ? 2 : 1);
     return 0;
