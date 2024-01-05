@@ -24,8 +24,8 @@ export function GameBoard(GameBoardProps: GameBoardProps) {
     tempBoard[lineIndex] = line;
     setBoard(tempBoard);
 
-    if (checkWin(board)){
-      alert(`Player ${GameBoardProps.currentPlayer} won!`);
+    if (checkWin(tempBoard)){
+      alert("Player " + GameBoardProps.currentPlayer + " wins!")
       return 0;
     }
 
