@@ -1,0 +1,41 @@
+.board-cell {
+    width: 5vw;
+    height: 5vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.board-cell > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.board-cell > div > div {
+    width: 3vw;
+    height: 3vw;
+    background-color: #101c28;
+    border-radius: 1.5vw;
+    cursor: pointer;
+}
+
+.board-cell > div > div:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.board-cell > div > .player1:hover {
+    background-color: #c14e5d;
+}
+
+.board-cell > div > .player2:hover {
+    background-color: #13a284;
+}
+
+.board-cell > div > .player1 {
+    background-color: #ed6577;
+}
+
+.board-cell > div > .player2 {
+    background-color: #19bd9c;
+}

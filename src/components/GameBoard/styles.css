@@ -1,0 +1,21 @@
+.board-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+
+.board-wrapper > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.board {
+    background-color: #263848;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
