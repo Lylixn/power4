@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/power4/static/css/main.a2a5e4ce.css",
+    "main.js": "/power4/static/js/main.85683e8e.js",
+    "index.html": "/power4/index.html",
+    "main.a2a5e4ce.css.map": "/power4/static/css/main.a2a5e4ce.css.map",
+    "main.85683e8e.js.map": "/power4/static/js/main.85683e8e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a2a5e4ce.css",
+    "static/js/main.85683e8e.js"
+  ]
+}
