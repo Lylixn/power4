@@ -2,6 +2,7 @@
   "name": "power4",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://lylixn.github.io/power4",
   "dependencies": {
     "@types/node": "^16.18.69",
     "@types/react": "^18.2.46",
@@ -34,5 +35,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
