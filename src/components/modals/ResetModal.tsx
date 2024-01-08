@@ -15,7 +15,7 @@ export function ResetModal(WinModalProps: WinModalProps) {
   return (
     <div className="modal-wrapper">
       <div className="modal">
-        <h1>Êtes vous sur de vouloir reinitialisé ?</h1>
+        <h1>Êtes vous sur de vouloir réinitialisé ?</h1>
         <div className="modal-actions">
           <button onClick={resetGame}>Confirmer</button>
           <button onClick={() => {WinModalProps.resetModal(false);}}>Annuler</button>
