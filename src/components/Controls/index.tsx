@@ -1,17 +1,20 @@
 import './styles.css';
 
-export function Controls({currentPlayer}: {currentPlayer: number}) {
+interface ControlsProps {
+  currentPlayer: number;
+  setReset: (reset: boolean) => void;
+}
+
+export function Controls(ControlsProps: ControlsProps) {
 
   return (
     <div className="controls">
       <div>
-        <p className={currentPlayer === 1 ? 'active' : ''}>Joueur 1</p>
-        <p className={currentPlayer === 2 ? 'active' : ''}>Joueur 2</p>
+        <p className={ControlsProps.currentPlayer === 1 ? 'active' : ''}>Joueur 1</p>
+        <p className={ControlsProps.currentPlayer === 2 ? 'active' : ''}>Joueur 2</p>
       </div>
       <div>
-        <p>reset</p>
-        <p>undo</p>
-        <p>redo</p>
+        <button onClick={() => {ControlsProps.setReset(true)}}>RESET</button>
       </div>
     </div>
   );

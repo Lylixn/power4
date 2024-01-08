@@ -1,6 +1,5 @@
 import './styles.css';
 import {BoardLine} from "../BoardLine";
-import {useState} from "react";
 import {checkIfLineIsFull} from "../../utils/checkIfLineIsFull";
 import {placeToken} from "../../utils/placeToken";
 import {checkWin} from "../../utils/checkWin";
@@ -8,24 +7,25 @@ import {checkWin} from "../../utils/checkWin";
 interface GameBoardProps {
   currentPlayer: number;
   setCurrentPlayer: (currentPlayer: number) => void;
+  setBoard: (board: number[][]) => void;
+  board: number[][];
+  setWin: (win: boolean) => void;
 }
 
 export function GameBoard(GameBoardProps: GameBoardProps) {
-  //create board table state with 7x6 cell
-  const [board, setBoard] = useState(Array(7).fill(Array(6).fill(0)));
 
   const placePiece = (lineIndex: number) => {
-    if (checkIfLineIsFull(board[lineIndex])) {
+    if (checkIfLineIsFull(GameBoardProps.board[lineIndex])) {
       return 0;
     }
 
-    let line = placeToken(board[lineIndex], GameBoardProps.currentPlayer);
-    let tempBoard = [...board];
+    let line = placeToken(GameBoardProps.board[lineIndex], GameBoardProps.currentPlayer);
+    let tempBoard = [...GameBoardProps.board];
     tempBoard[lineIndex] = line;
-    setBoard(tempBoard);
+    GameBoardProps.setBoard(tempBoard);
 
     if (checkWin(tempBoard)){
-      alert("Player " + GameBoardProps.currentPlayer + " wins!")
+      GameBoardProps.setWin(true);
       return 0;
     }
 
@@ -34,7 +34,7 @@ export function GameBoard(GameBoardProps: GameBoardProps) {
   }
 
   const renderLine = () => {
-    return board.map((line, index) => {
+    return GameBoardProps.board.map((line, index) => {
       return <BoardLine key={index} line={line} lineIndex={index} placePiece={placePiece}  />
     })
   }
