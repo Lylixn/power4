@@ -10,7 +10,7 @@ function Index() {
   const [currentPlayer, setCurrentPlayer] = React.useState(1)
   const [board, setBoard] = useState(Array(7).fill(Array(6).fill(0)));
   const [win, setWin] = useState(false);
-  const [reset, setReset] = useState(true);
+  const [reset, setReset] = useState(false);
 
   const resetGame = () => {
     setCurrentPlayer(1);
