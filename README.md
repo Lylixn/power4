@@ -12,7 +12,6 @@ A React and TypeScript implementation of the classic Connect Four game.
 
 * React
 * TypeScript
-* Redux
 * Styled Components
 
 ## Installation
